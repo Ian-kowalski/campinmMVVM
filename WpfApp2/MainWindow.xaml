@@ -1,0 +1,51 @@
+﻿<Window x:Class = "WPF.MVVM.Camping.MainWindow"
+   xmlns = "http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x = "http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:d = "http://schemas.microsoft.com/expression/blend/2008"
+   xmlns:mc = "http://schemas.openxmlformats.org/markup-compatibility/2006"
+   xmlns:local = "clr-namespace:WPF.MVVM.Camping"
+   xmlns:views = "clr-namespace:WPF.MVVM.Camping.Views"
+   xmlns:vms = "clr-namespace:WPF.MVVM.Camping.ViewModel" 
+   mc:Ignorable = "d"
+   Title = "MainWindow" Height = "960" Width = "1920">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150*"/>
+            <RowDefinition Height="850*"/>
+        </Grid.RowDefinitions>
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="SiteControlButton" Tag="CampsitesControlView" Margin="8,8,8,8" Content="Plekbeheer" FontSize="48" Grid.Row="0" Grid.Column="0" BorderBrush="#000000" BorderThickness="3" Command="{Binding CampsitesControlCommand}"/>
+        <Button x:Name="MakeReservationButton" Tag="MakeResevationView" Margin="8,8,8,8" Content="Reservering Plaatsen" FontSize="48" Grid.Row="0" Grid.Column="1" BorderBrush="#000000" BorderThickness="3" Command="{Binding MakeReservationCommand}"/>
+        <Button x:Name="ReservationsViewButton" Tag="EditReservationView" Margin="8,8,8,8" Content="Reserveringen" FontSize="48" Grid.Row="0" Grid.Column="3" BorderBrush="#000000" BorderThickness="3" Command="{Binding EditReservation}"/>
+
+            <Grid Grid.Row="1" Grid.ColumnSpan="3" Margin="32">
+               
+                <Grid.Resources>
+                <DataTemplate DataType="{x:Type vms:makeReservationViewModel}">
+                        <views:MakeResevationView />
+                    </DataTemplate>
+
+                <DataTemplate DataType="{x:Type vms:editReservationViewModel}">
+                        <views:EditReservationView />
+                    </DataTemplate>
+
+                <DataTemplate DataType="{x:Type vms:CampsitesControlViewModel}">
+                        <views:CampsitesControlView />
+                    </DataTemplate>
+                </Grid.Resources>
+                
+
+                <ContentControl Content="{Binding CurrentViewModel}" />
+
+        </Grid>
+    </Grid>
+
+</Window>

@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="WPF.MVVM.Camping.Views.EditReservationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF.MVVM.Camping.Views" 
+             xmlns:views="clr-namespace:WPF.MVVM.Camping.Views.subViews"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Border BorderBrush="#000000" BorderThickness="3" Grid.Row="0" Grid.Column="0" Margin="0,0,16,0">
+            <Grid>
+                <views:editReservationListView DataContext="{Binding editReservationListView}"/>
+            </Grid>
+        </Border>
+        <Border  BorderBrush="#000000" BorderThickness="3" Grid.Row="0" Grid.Column="1" Margin="16,0,0,0">
+            <Grid>
+                <views:reservationInputView  DataContext="{Binding reservationInputView}"/>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

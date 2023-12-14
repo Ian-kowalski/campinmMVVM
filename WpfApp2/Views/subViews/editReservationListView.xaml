@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="WPF.MVVM.Camping.Views.subViews.editReservationListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF.MVVM.Camping.Views.subViews"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Grid.ColumnSpan="5" Margin="0,0,0,0" Stroke="Black" Fill="LightGray"/>
+
+            <Label Content="reserv. Nr." HorizontalContentAlignment="Right" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="22"/>
+            <TextBox x:Name="reservationIDFilterBox" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Center" FontSize="22" Margin="16,0,16,0" />
+
+            <Label Content="Achternaam" Grid.Column="2"  HorizontalContentAlignment="Right" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="22"/>
+            <TextBox x:Name="LastNameFilterBox" Grid.Column="3" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Center" FontSize="22" Margin="16,0,16,0" />
+        </Grid>
+        <Grid Margin="0,0,17,0" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="1" Content="Reserv. Nr." BorderBrush="Black" BorderThickness="2,1,1,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label Grid.Column="2" Content="Plaats Nr." BorderBrush="Black" BorderThickness="1,1,1,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label Grid.Column="3" Content="Achternaam" BorderBrush="Black" BorderThickness="1,1,1,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label Grid.Column="4" Content="Begin datum" BorderBrush="Black" BorderThickness="1,1,1,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label Grid.Column="5" Content="Eind datum" BorderBrush="Black" BorderThickness="1,1,1,2" Margin="0,0,-17,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="AnnulerenButton" Content="Annuleren" Grid.Column="0" Grid.Row="0" Height="50" Margin="32,32,32,0" VerticalAlignment="Top" IsEnabled="False" BorderBrush="#000000" BorderThickness="2" FontSize="16"/>
+
+        </Grid>
+
+        <ScrollViewer x:Name="ReservationListScrollViewer" Grid.Row="2" BorderBrush="#000000" BorderThickness="3"/>
+    </Grid>
+</UserControl>
